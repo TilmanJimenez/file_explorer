@@ -134,4 +134,9 @@ def get_datetime_object(date_str):
                 parts[1] = parts[1][:3]
             format_str = '%d-%b-%Y'
         date_str = '-'.join(parts)
-    return datetime.datetime.strptime(date_str, format_str)
+    try:
+        return datetime.datetime.strptime(date_str, format_str)
+    except ValueError:
+        format_str = '%Y-%m-%d'
+        return datetime.datetime.strptime(date_str, format_str)
+

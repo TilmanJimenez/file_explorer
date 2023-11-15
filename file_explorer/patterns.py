@@ -105,6 +105,18 @@ FILE_NAME_PATTERNS = [
                                                     r'(?P<suffix>\w*)?'
                                                     )
                    ),
+        # ODEN specific
+        re.compile('^aom{}-station-{}-cast{}.{}$'.format(r'(?P<year>\d{2})',
+                                                 r'(?P<station>\d{2})',
+                                                 r'(?P<number>\d+)',
+                                                 r'(?P<suffix>\w*)?',
+                                                 )),
+
+        re.compile('^ryder{}-{}-ctd{}.{}$'.format(r'(?P<year>\d{2})',
+                                                         r'(?P<station>\d{2})',
+                                                         r'(?P<number>\d+)',
+                                                         r'(?P<suffix>\w*)?',
+                                                         ))
     ]
 
 CRUISE_PATTERNS = [
